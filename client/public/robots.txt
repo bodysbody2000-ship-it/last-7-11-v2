@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /host/
+Disallow: /api/
+
+Sitemap: https://mrahmedlivequiz.up.railway.app/sitemap.xml

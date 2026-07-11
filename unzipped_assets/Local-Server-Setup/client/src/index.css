@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ultra-lightweight CSS for low-end CPUs (2.0 GHz) */
+* {
+  animation: none !important;
+  transition: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+:root {
+  --background: 222 47% 2%;
+  --foreground: 213 31% 91%;
+  --primary: 180 100% 50%;
+  --primary-foreground: 222 47% 6%;
+  --secondary: 280 100% 70%;
+  --secondary-foreground: 222 47% 6%;
+  --accent: 60 100% 50%;
+  --accent-foreground: 222 47% 6%;
+  --success: 142 70% 50%;
+  --success-foreground: 222 47% 6%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --muted: 222 47% 10%;
+  --muted-foreground: 215 20% 65%;
+  --border: 222 47% 12%;
+  --input: 222 47% 12%;
+  --ring: 250 100% 70%;
+  --radius: 0.5rem;
+  --font-display: 'IBM Plex Sans Arabic', sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+@layer base {
+  * {
+    font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body) !important;
+    background-image: none !important;
+    background-color: #05070a !important;
+  }
+}
+
+.glass-panel, .bg-card {
+  @apply bg-zinc-900 border-zinc-800;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.text-card-foreground {
+  @apply text-foreground;
+}
+
+.bg-popover {
+  @apply bg-zinc-900 border-white/10;
+}
+
+.text-popover-foreground {
+  @apply text-foreground;
+}
+
+.border-input {
+  @apply border-white/15;
+}
+
+.bg-secondary {
+  @apply bg-zinc-800;
+}
+
+.text-secondary-foreground {
+  @apply text-zinc-100;
+}
+
+.bg-muted {
+  @apply bg-zinc-900;
+}
+
+.text-muted-foreground {
+  @apply text-zinc-400;
+}
+
+/* Custom Animation Classes */
+.animate-in-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-hover {
+  @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl;
+}
